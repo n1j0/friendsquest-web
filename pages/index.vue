@@ -1,15 +1,14 @@
 <script setup>
 const image = ref(1)
-const imageSrc = computed(() => `~/assets/images/screens/${ image.value }.png`)
-const features = ref([{
+const features = ref([ {
     title: 'Invite friends',
     description: 'Invite your friends to join the fun! More friends means more competition and more memories to be made.',
 }, {
     title: 'Share footprints',
     description: 'Playfully share the most special moments by capturing only one image per location.'
 }, {
-    title: 'View footprints',
-    description: 'You are on the trail of footprints by discovering them on the interactive globe.'
+    title: 'React to footprints',
+    description: 'Reacting to a friend\'s footprint will allow you to express your feelings on it.'
 }
 ])
 </script>
@@ -18,7 +17,8 @@ const features = ref([{
     <header>
         <nav>
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-50 flex justify-between py-8">
-                <div class="relative z-10 flex items-center gap-16"><a class="flex items-center" aria-label="Home" href="/">
+                <div class="relative z-10 flex items-center gap-16"><a class="flex items-center" aria-label="Home"
+                                                                       href="/">
                     <svg viewBox="0 0 40 40" aria-hidden="true" class="h-10 w-10 flex-none mr-4" style="fill: #af4e21;">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M20 40C8.954 40 0 31.046 0 20S8.954 0 20 0s20 8.954 20 20-8.954 20-20 20ZM4 20c0 7.264 5.163 13.321 12.02 14.704C17.642 35.03 19 33.657 19 32V8c0-1.657-1.357-3.031-2.98-2.704C9.162 6.68 4 12.736 4 20Z"></path>
@@ -89,7 +89,7 @@ const features = ref([{
                                     class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                                 <div
                                     class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
-                                    <p class="text-white">Hello world 1</p>
+                                    <img v-if="image === 1" src="~/assets/images/header.jpeg"/>
                                 </div>
                                 <svg viewBox="0 0 366 729" aria-hidden="true"
                                      class="pointer-events-none absolute inset-0 h-full w-full fill-gray-100">
@@ -116,7 +116,8 @@ const features = ref([{
                     <h2 class="text-3xl font-medium tracking-tight text-white">Travel, share and follow footprints. Try
                         it for yourself.</h2>
                     <p class="mt-2 text-lg text-gray-400">
-                        Battle your friends in travelling around the world, find places you have never been before and share memories with your friends in the most unique way.
+                        Battle your friends in travelling around the world, find places you have never been before and
+                        share memories with your friends in the most unique way.
                     </p>
                 </div>
             </div>
@@ -146,7 +147,11 @@ const features = ref([{
                                     class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                                 <div
                                     class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
-                                    <p class="text-white">{{ imageSrc }}</p>
+                                    <transition name="slide-up">
+                                        <img v-if="image === 1" src="~/assets/images/screens/1.jpeg" style="position: absolute;"/>
+                                        <img v-else-if="image === 2" src="~/assets/images/screens/2.jpeg" style="position: absolute;"/>
+                                        <img v-else-if="image === 3" src="~/assets/images/screens/3.jpeg" style="position: absolute;"/>
+                                    </transition>
                                 </div>
                                 <svg viewBox="0 0 366 729" aria-hidden="true"
                                      class="pointer-events-none absolute inset-0 h-full w-full fill-gray-100">
@@ -171,7 +176,8 @@ const features = ref([{
                                 />
                             </div>
                             <div class="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
-                                <h3 class="mt-6 text-sm font-semibold text-white sm:text-lg">{{ features[image - 1].title }}</h3>
+                                <h3 class="mt-6 text-sm font-semibold text-white sm:text-lg">
+                                    {{ features[image - 1].title }}</h3>
                                 <p class="mt-2 text-sm text-gray-400">{{ features[image - 1].description }}</p>
                             </div>
                         </div>
@@ -180,13 +186,16 @@ const features = ref([{
                 <div class="mt-6 flex justify-center gap-3">
                     <button type="button" class="relative h-0.5 w-4 rounded-full"
                             :class="{ 'bg-gray-300': image === 1, 'bg-gray-500': image !== 1 }"
-                            aria-label="Go to slide 1" @click="image = 1"><span class="absolute -inset-x-1.5 -inset-y-3"></span></button>
+                            aria-label="Go to slide 1" @click="image = 1"><span
+                        class="absolute -inset-x-1.5 -inset-y-3"></span></button>
                     <button type="button" class="relative h-0.5 w-4 rounded-full"
                             :class="{ 'bg-gray-300': image === 2, 'bg-gray-500': image !== 2 }"
-                            aria-label="Go to slide 2" @click="image = 2"><span class="absolute -inset-x-1.5 -inset-y-3"></span></button>
+                            aria-label="Go to slide 2" @click="image = 2"><span
+                        class="absolute -inset-x-1.5 -inset-y-3"></span></button>
                     <button type="button" class="relative h-0.5 w-4 rounded-full"
                             :class="{ 'bg-gray-300': image === 3, 'bg-gray-500': image !== 3 }"
-                            aria-label="Go to slide 3" @click="image = 3"><span class="absolute -inset-x-1.5 -inset-y-3"></span></button>
+                            aria-label="Go to slide 3" @click="image = 3"><span
+                        class="absolute -inset-x-1.5 -inset-y-3"></span></button>
                 </div>
             </div>
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 hidden md:mt-20 md:block">
@@ -308,7 +317,11 @@ const features = ref([{
                                 class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                             <div
                                 class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] flex justify-center items-center h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
-                                <p class="text-white">{{ imageSrc }}</p>
+                                <transition name="slide-up">
+                                    <img v-if="image === 1" src="~/assets/images/screens/1.jpeg" style="position: absolute;"/>
+                                    <img v-else-if="image === 2" src="~/assets/images/screens/2.jpeg" style="position: absolute;"/>
+                                    <img v-else-if="image === 3" src="~/assets/images/screens/3.jpeg" style="position: absolute;"/>
+                                </transition>
                             </div>
                             <svg viewBox="0 0 366 729" aria-hidden="true"
                                  class="pointer-events-none absolute inset-0 h-full w-full fill-gray-100">
@@ -342,42 +355,60 @@ const features = ref([{
                     <h2 id="faqs-title" class="text-3xl font-medium tracking-tight text-gray-900">Frequently asked
                         questions</h2>
                     <p class="mt-2 text-lg text-gray-600">If you have anything else you want to ask, <a
-                        class="text-gray-900 underline" href="mailto:app.friendsquest@gmail.com">reach out to us</a>.</p>
+                        class="text-gray-900 underline" href="mailto:app.friendsquest@gmail.com">reach out to us</a>.
+                    </p>
                 </div>
                 <ul role="list"
                     class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:max-w-none lg:grid-cols-3">
                     <li>
                         <ul role="list" class="space-y-10">
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">What is the purpose of the app?</h3>
-                                <p class="mt-4 text-sm text-gray-700">The app allows you to create digital footprints, which are combinations of an image and audio that represent a moment or experience in your life at a specific location.</p>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">What is the purpose of the
+                                    app?</h3>
+                                <p class="mt-4 text-sm text-gray-700">The app allows you to create digital footprints,
+                                    which are combinations of an image and audio that represent a moment or experience
+                                    in your life at a specific location.</p>
                             </li>
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">How do I create a digital footprint?</h3>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">How do I create a digital
+                                    footprint?</h3>
                                 <p class="mt-4 text-sm text-gray-700">
-                                    To create a digital footprint, first click the plus button at the globe. An audio message to go along with the image is recorded in the background automatically. Finally, save your digital footprint it's visible for your friends.
+                                    To create a digital footprint, first click the plus button at the globe. An audio
+                                    message to go along with the image is recorded in the background automatically.
+                                    Finally, save your digital footprint. Afterwards it's visible for your friends.
                                 </p>
                             </li>
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Can I customize my digital footprint?</h3>
-                                <p class="mt-4 text-sm text-gray-700">Yes, you can customize the image and audio that make up your digital footprint. You can also add captions or a description to help describe your footprint.</p>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Can I customize my digital
+                                    footprint?</h3>
+                                <p class="mt-4 text-sm text-gray-700">Yes, you can customize the image and audio that
+                                    make up your digital footprint. You can also add captions or a description to help
+                                    describe your footprint.</p>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <ul role="list" class="space-y-10">
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Can I share my digital footprint with others?</h3>
-                                <p class="mt-4 text-sm text-gray-700">Yes, you're footprints are automatically shared with your friends. In the future you can also choose to make your footprint private and only visible to yourself.</p>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Can I share my digital
+                                    footprint with others?</h3>
+                                <p class="mt-4 text-sm text-gray-700">Yes, you're footprints are automatically shared
+                                    with your friends. In the future you can also choose to make your footprint private
+                                    and only visible to yourself.</p>
                             </li>
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Is there a limit to how many digital footprints I can create?</h3>
-                                <p class="mt-4 text-sm text-gray-700">There is no limit to the number of digital footprints you can create. Feel free to capture as many moments and experiences as you'd like.</p>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Is there a limit to how many
+                                    digital footprints I can create?</h3>
+                                <p class="mt-4 text-sm text-gray-700">There is no limit to the number of digital
+                                    footprints you can create. Feel free to capture as many moments and experiences as
+                                    you'd like.</p>
                             </li>
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Is it possible to delete a digital footprint that I have created?</h3>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Is it possible to delete a
+                                    digital footprint that I have created?</h3>
                                 <p class="mt-4 text-sm text-gray-700">
-                                    Yes, it is possible to delete a digital footprint that you have created. You can do this from your profile page or by accessing the footprint directly.
+                                    Yes, it is possible to delete a digital footprint that you have created. You can do
+                                    this from your profile page or by accessing the footprint directly.
                                 </p>
                             </li>
                         </ul>
@@ -389,14 +420,21 @@ const features = ref([{
                                 <p class="mt-4 text-sm text-gray-700">The app is free to download and use.</p>
                             </li>
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">How do I report a problem or issue with the app?</h3>
-                                <p class="mt-4 text-sm text-gray-700">If you encounter a problem or issue with the app, you can report it by contacting us via <a
-                                    class="text-gray-900 underline" href="mailto:app.friendsquest@gmail.com">e-mail</a>.</p>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">How do I report a problem or
+                                    issue with the app?</h3>
+                                <p class="mt-4 text-sm text-gray-700">If you encounter a problem or issue with the app,
+                                    you can report it by contacting us via <a
+                                        class="text-gray-900 underline"
+                                        href="mailto:app.friendsquest@gmail.com">e-mail</a>.</p>
                             </li>
                             <li>
-                                <h3 class="text-lg font-semibold leading-6 text-gray-900">How can I receive points within the app?</h3>
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">How can I receive points
+                                    within the app?</h3>
                                 <p class="mt-4 text-sm text-gray-700">
-                                    There are several ways to receive points. In the near future there even will be bonus points for completing certain tasks. The best way to know how to receive points is to try it out. Wouldn't it be boring if we just tell you how to get points? It's like revealing a magic trick. You don't do that ;)
+                                    There are several ways to receive points. In the near future there even will be
+                                    bonus points for completing certain tasks. The best way to know how to receive
+                                    points is to try it out. Wouldn't it be boring if we just tell you how to get
+                                    points? It's like revealing a magic trick. You don't do that ;)
                                 </p>
                             </li>
                         </ul>
@@ -469,5 +507,20 @@ html {
 
 .animate-spin-slower {
     animation: spin 6s linear infinite;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: all 1s ease-out;
+}
+
+.slide-up-enter-from {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.slide-up-leave-to {
+    opacity: 0;
+    transform: translateY(-100px);
 }
 </style>
