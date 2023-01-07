@@ -14,22 +14,6 @@ const features = ref([ {
 </script>
 
 <template>
-    <header>
-        <nav>
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-50 flex justify-between py-8">
-                <div class="relative z-10 flex items-center gap-16"><a class="flex items-center" aria-label="Home"
-                                                                       href="/">
-                    <svg viewBox="0 0 40 40" aria-hidden="true" class="h-10 w-10 flex-none mr-4" style="fill: #af4e21;">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M20 40C8.954 40 0 31.046 0 20S8.954 0 20 0s20 8.954 20 20-8.954 20-20 20ZM4 20c0 7.264 5.163 13.321 12.02 14.704C17.642 35.03 19 33.657 19 32V8c0-1.657-1.357-3.031-2.98-2.704C9.162 6.68 4 12.736 4 20Z"></path>
-                    </svg>
-                    <h1>Friends Quest</h1>
-                </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <main>
         <div class="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36" style="height: 100vh">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -443,33 +427,6 @@ const features = ref([ {
             </div>
         </section>
     </main>
-
-    <footer class="border-t border-gray-200">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div
-                class="flex flex-col items-start justify-between gap-y-12 pt-8 lg:pt-16 pb-6 lg:flex-row lg:items-center py-8 lg:py-16">
-                <div>
-                    <div class="flex items-center text-gray-900">
-                        <svg viewBox="0 0 40 40" aria-hidden="true" class="h-10 w-10 flex-none" style="fill: #af4e21;">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M20 40C8.954 40 0 31.046 0 20S8.954 0 20 0s20 8.954 20 20-8.954 20-20 20ZM4 20c0 7.264 5.163 13.321 12.02 14.704C17.642 35.03 19 33.657 19 32V8c0-1.657-1.357-3.031-2.98-2.704C9.162 6.68 4 12.736 4 20Z"></path>
-                        </svg>
-                        <div class="ml-4"><p class="text-base font-semibold">Friends Quest</p>
-                            <p class="mt-1 text-sm">The unique travel experience.</p></div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="flex flex-col items-center border-t border-gray-200 pt-8 pb-12 md:flex-row-reverse md:justify-between md:pt-6">
-                <div class="flex gap-8 w-full justify-center md:w-auto">
-                    <a class="text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
-                       href="/imprint">Imprint</a>
-                    <a class="text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
-                       href="/data-privacy">Privacy Policy</a>
-                </div>
-                <p class="mt-6 text-sm text-gray-500 md:mt-0">© Copyright 2023. All rights reserved.</p></div>
-        </div>
-    </footer>
 </template>
 
 <style>
