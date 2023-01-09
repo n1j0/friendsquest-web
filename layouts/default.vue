@@ -10,8 +10,8 @@ useHead({
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-50 flex justify-between py-8">
                 <div class="relative z-10 flex items-center gap-16"><a class="flex items-center" aria-label="Home"
                                                                        href="/">
-                    <img aria-hidden="true" class="h-10 w-10 flex-none mr-4" src="~/assets/svg/logo.svg"/>
-                    <h1>Friends Quest</h1>
+                    <img aria-hidden="true" class="w-44 flex-none mr-4" src="~/assets/svg/logo-text.svg"/>
+                    <h1 style="display: none">Friends Quest</h1>
                 </a>
                 </div>
             </div>
@@ -26,7 +26,7 @@ useHead({
                 class="flex flex-col items-start justify-between gap-y-12 pt-8 lg:pt-16 pb-6 lg:flex-row lg:items-center py-8 lg:py-16">
                 <div>
                     <div class="flex items-center text-gray-900">
-                        <img aria-hidden="true" class="h-10 w-10 flex-none" src="~/assets/svg/logo.svg"/>
+                        <img aria-hidden="true" class="w-10 flex-none" src="~/assets/svg/logo.svg"/>
                         <div class="ml-4"><p class="text-base font-semibold">Friends Quest</p>
                             <p class="mt-1 text-sm">The unique travel experience.</p></div>
                     </div>
