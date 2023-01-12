@@ -24,11 +24,14 @@ const features = ref([ {
                             footprints on your globe. Follow the footprints of your friends and react on their memories.
                             When you are too far away to see whats behind the footprint just listen to the sounds behind
                             the memory.</p>
-                        <div class="mt-8 flex gap-x-6 gap-y-4">
-                            <a href="/#">
+                        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+                            <nuxt-link to="https://play.google.com/store/apps/details?id=at.friendsquest.app" target="_blank">
+                                <img width="120" src="~/assets/images/google-play-badge.png" />
+                            </nuxt-link>
+                            <nuxt-link to="/">
                                 <img width="150" src="~/assets/images/product-hunt-logo-horizontal-orange.png"
                                      style="background: transparent;"/>
-                            </a>
+                            </nuxt-link>
                         </div>
                     </div>
                     <div class="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
