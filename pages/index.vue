@@ -4,11 +4,11 @@ const features = ref([ {
     title: 'Invite friends',
     description: 'Invite your friends to join the fun! More friends means more competition and more memories to be made.',
 }, {
-    title: 'Share footprints',
-    description: 'Playfully share the most special moments by capturing only one image per location.'
+    title: 'Share and react',
+    description: 'Playfully share the most special moments by capturing only one image per location and react to visited impressions of your friends.'
 }, {
-    title: 'React to footprints',
-    description: 'Reacting to a friend\'s footprint will allow you to express your feelings on it.'
+    title: 'Collect points',
+    description: 'Climb up the leaderboard by collecting points - competing against your friends and the world\'s leading travellers.'
 }
 ])
 </script>
@@ -72,8 +72,8 @@ const features = ref([ {
                                 <div
                                     class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                                 <div
-                                    class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
-                                    <img v-if="image === 1" src="~/assets/images/header.jpeg"/>
+                                    class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-gray-900">
+                                    <img src="~/assets/images/header.png"/>
                                 </div>
                                 <svg viewBox="0 0 366 729" aria-hidden="true"
                                      class="pointer-events-none absolute inset-0 h-full w-full fill-gray-100">
@@ -94,7 +94,7 @@ const features = ref([ {
                 </div>
             </div>
         </div>
-        <section id="features" aria-label="Features of Friends Quest" class="bg-gray-900 py-20 sm:py-32">
+        <section id="features" aria-label="Features of FriendsQuest" class="bg-gray-900 py-20 sm:py-32">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
                     <h2 class="text-3xl font-medium tracking-tight text-white">Travel, share and follow footprints. Try
@@ -109,7 +109,7 @@ const features = ref([ {
                 <div
                     class="-mb-4 flex snap-x snap-mandatory -space-x-4 overflow-x-auto overscroll-x-contain scroll-smooth pb-4 [scrollbar-width:none] sm:-space-x-6 [&::-webkit-scrollbar]:hidden">
                     <div class="w-full flex-none snap-center px-4 sm:px-6">
-                        <div class="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
+                        <div class="relative transform overflow-hidden rounded-2xl bg-gray-800 px-4 py-6">
                             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                                 <svg viewBox="0 0 558 558" width="558" height="558" fill="none" aria-hidden="true">
                                     <defs>
@@ -130,11 +130,14 @@ const features = ref([ {
                                 <div
                                     class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                                 <div
-                                    class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
+                                    class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-white pt-[calc(23/318*100%)]">
                                     <transition name="slide-up">
-                                        <img v-if="image === 1" src="~/assets/images/screens/1.jpeg" style="position: absolute;"/>
-                                        <img v-else-if="image === 2" src="~/assets/images/screens/2.jpeg" style="position: absolute;"/>
-                                        <img v-else-if="image === 3" src="~/assets/images/screens/3.jpeg" style="position: absolute;"/>
+                                        <img v-if="image === 1" src="~/assets/images/screens/1.png"
+                                             style="position: absolute;"/>
+                                        <img v-else-if="image === 2" src="~/assets/images/screens/2.png"
+                                             style="position: absolute;"/>
+                                        <img v-else-if="image === 3" src="~/assets/images/screens/3.png"
+                                             style="position: absolute;"/>
                                     </transition>
                                 </div>
                                 <svg viewBox="0 0 366 729" aria-hidden="true"
@@ -220,31 +223,6 @@ const features = ref([ {
                         </div>
                         <div class="relative rounded-2xl transition-colors hover:bg-gray-800/30">
                             <div class="relative z-10 p-8 rounded-2xl" :class="{ 'bg-gray-800': image === 2 }">
-                                <svg viewBox="0 0 32 32" aria-hidden="true" class="h-8 w-8">
-                                    <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-                                        fill="#a3a3a3"
-                                    ></path>
-                                    <path d="M12 25l8-8m0 0h-6m6 0v6" stroke="#a3a3a3" stroke-width="2"
-                                          stroke-linecap="round"></path>
-                                    <circle cx="16" cy="16" r="16" fill="#A3A3A3" fill-opacity="0.2"></circle>
-                                </svg>
-                                <h3 class="mt-6 text-lg font-semibold text-white">
-                                    <button class="text-left [&:not(:focus-visible)]:focus:outline-none"
-                                            id="headlessui-tabs-tab-:ra:" role="tab" type="button" aria-selected="false"
-                                            tabindex="-1" @click="image = 2">
-                                        <span class="absolute inset-0 rounded-2xl"></span>{{ features[1].title }}
-                                    </button>
-                                </h3>
-                                <p class="mt-2 text-sm text-gray-400">
-                                    {{ features[1].description }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="relative rounded-2xl transition-colors hover:bg-gray-800/30">
-                            <div class="relative z-10 p-8 rounded-2xl" :class="{ 'bg-gray-800': image === 3 }">
                                 <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" class="h-8 w-8">
                                     <defs>
                                         <linearGradient id=":rb:-gradient" x1="14" y1="14.5" x2="7" y2="17"
@@ -266,6 +244,31 @@ const features = ref([ {
                                         d="M21 20l.217-5.513a1.431 1.431 0 00-2.85-.226L17.5 21.5l-1.51-1.51a2.107 2.107 0 00-2.98 0 .024.024 0 00-.005.024l3.083 9.25A4 4 0 0019.883 32H25a4 4 0 004-4v-5a3 3 0 00-3-3h-5z"
                                         fill="#A3A3A3"
                                     ></path>
+                                </svg>
+                                <h3 class="mt-6 text-lg font-semibold text-white">
+                                    <button class="text-left [&:not(:focus-visible)]:focus:outline-none"
+                                            id="headlessui-tabs-tab-:ra:" role="tab" type="button" aria-selected="false"
+                                            tabindex="-1" @click="image = 2">
+                                        <span class="absolute inset-0 rounded-2xl"></span>{{ features[1].title }}
+                                    </button>
+                                </h3>
+                                <p class="mt-2 text-sm text-gray-400">
+                                    {{ features[1].description }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative rounded-2xl transition-colors hover:bg-gray-800/30">
+                            <div class="relative z-10 p-8 rounded-2xl" :class="{ 'bg-gray-800': image === 3 }">
+                                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" class="h-8 w-8">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
+                                          fill="#a3a3a3"></path>
+                                    <circle cx="11" cy="14" r="2" fill="#a3a3a3"></circle>
+                                    <circle cx="11" cy="20" r="2" fill="#a3a3a3"></circle>
+                                    <circle cx="11" cy="26" r="2" fill="#a3a3a3"></circle>
+                                    <path d="M16 14h6M16 20h6M16 26h6" stroke="#737373" stroke-width="2"
+                                          stroke-linecap="square"></path>
+                                    <circle cx="16" cy="16" r="16" fill="#A3A3A3" fill-opacity="0.2"></circle>
                                 </svg>
                                 <h3 class="mt-6 text-lg font-semibold text-white">
                                     <button class="text-left [&:not(:focus-visible)]:focus:outline-none"
@@ -300,11 +303,14 @@ const features = ref([ {
                             <div
                                 class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                             <div
-                                class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] flex justify-center items-center h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
+                                class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] flex justify-center items-center h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform overflow-hidden bg-white pt-[calc(23/318*100%)]">
                                 <transition name="slide-up">
-                                    <img v-if="image === 1" src="~/assets/images/screens/1.jpeg" style="position: absolute;"/>
-                                    <img v-else-if="image === 2" src="~/assets/images/screens/2.jpeg" style="position: absolute;"/>
-                                    <img v-else-if="image === 3" src="~/assets/images/screens/3.jpeg" style="position: absolute;"/>
+                                    <img v-if="image === 1" src="~/assets/images/screens/1.png"
+                                         style="position: absolute;"/>
+                                    <img v-else-if="image === 2" src="~/assets/images/screens/2.png"
+                                         style="position: absolute;"/>
+                                    <img v-else-if="image === 3" src="~/assets/images/screens/3.png"
+                                         style="position: absolute;"/>
                                 </transition>
                             </div>
                             <svg viewBox="0 0 366 729" aria-hidden="true"
