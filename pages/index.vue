@@ -15,7 +15,7 @@ const features = ref([ {
 
 <template>
     <main>
-        <div class="overflow-hidden py-20 lg:pb-32 xl:pb-36" style="height: 100vh">
+        <div class="overflow-hidden py-20 pb-6 lg:pb-32 xl:pb-36">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
                     <div class="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
@@ -34,7 +34,7 @@ const features = ref([ {
                             </nuxt-link>
                         </div>
                     </div>
-                    <div class="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
+                    <div class="relative mt-10 sm:mt-20 sm:px-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
                         <div
                             class="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0"
                         >
@@ -70,8 +70,8 @@ const features = ref([ {
                             </svg>
                         </div>
                         <div
-                            class="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_90%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-56 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-42">
-                            <div class="relative aspect-[366/729] mx-auto max-w-[366px]">
+                            class="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_90%,transparent)] lg:[mask-image:linear-gradient(to_bottom,white_75%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-56 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-42">
+                            <div class="relative aspect-[366/729] mx-auto max-w-[366px] h-[510px] lg:h-[575px]">
                                 <div
                                     class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
                                 <div
@@ -129,43 +129,35 @@ const features = ref([ {
                                           stroke-linecap="round"></path>
                                 </svg>
                             </div>
-                            <div class="relative aspect-[366/729] relative mx-auto w-full max-w-[366px]">
-                                <div
-                                    class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
-                                <div
-                                    class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-white pt-[calc(23/318*100%)]">
-                                    <transition name="slide-up">
-                                        <img v-if="image === 1" src="~/assets/images/screens/1.png"
-                                             style="position: absolute;"/>
-                                        <img v-else-if="image === 2" src="~/assets/images/screens/2.png"
-                                             style="position: absolute;"/>
-                                        <img v-else-if="image === 3" src="~/assets/images/screens/3.png"
-                                             style="position: absolute;"/>
-                                    </transition>
+                            <div class="relative mx-auto">
+                                <div class="relative aspect-[366/729] mx-auto w-full max-w-[250px]">
+                                    <div
+                                        class="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"></div>
+                                    <div
+                                        class="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-white pt-[calc(23/318*100%)]">
+                                        <transition name="slide-up">
+                                            <img v-if="image === 1" src="~/assets/images/screens/1.png"
+                                                 style="position: absolute;"/>
+                                            <img v-else-if="image === 2" src="~/assets/images/screens/2.png"
+                                                 style="position: absolute;"/>
+                                            <img v-else-if="image === 3" src="~/assets/images/screens/3.png"
+                                                 style="position: absolute;"/>
+                                        </transition>
+                                    </div>
+                                    <img
+                                        alt=""
+                                        src="~/assets/svg/phone-frame.svg"
+                                        width="366"
+                                        height="729"
+                                        decoding="async"
+                                        data-nimg="1"
+                                        class="pointer-events-none absolute inset-0 h-full w-full"
+                                        loading="lazy"
+                                        style="color: transparent;"
+                                    />
                                 </div>
-                                <svg viewBox="0 0 366 729" aria-hidden="true"
-                                     class="pointer-events-none absolute inset-0 h-full w-full fill-gray-100">
-                                    <path
-                                        fill="#F2F2F2"
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M300.092 1c41.22 0 63.223 21.99 63.223 63.213V184.94c-.173.184-.329.476-.458.851.188-.282.404-.547.647-.791.844-.073 2.496.257 2.496 2.157V268.719c-.406 2.023-2.605 2.023-2.605 2.023a7.119 7.119 0 0 1-.08-.102v394.462c0 41.213-22.001 63.212-63.223 63.212h-95.074c-.881-.468-2.474-.795-4.323-.838l-33.704-.005-.049.001h-.231l-.141-.001c-2.028 0-3.798.339-4.745.843H66.751c-41.223 0-63.223-21.995-63.223-63.208V287.739c-.402-.024-2.165-.23-2.524-2.02v-.973A2.039 2.039 0 0 1 1 284.62v-47.611c0-.042.001-.084.004-.126v-.726c0-1.9 1.652-2.23 2.496-2.157l.028.028v-16.289c-.402-.024-2.165-.23-2.524-2.02v-.973A2.039 2.039 0 0 1 1 214.62v-47.611c0-.042.001-.084.004-.126v-.726c0-1.9 1.652-2.23 2.496-2.157l.028.028v-26.041a2.26 2.26 0 0 0 .093-.236l-.064-.01a3.337 3.337 0 0 1-.72-.12l-.166-.028A2 2 0 0 1 1 135.62v-24.611a2 2 0 0 1 1.671-1.973l.857-.143v-44.68C3.528 22.99 25.53 1 66.75 1h233.341ZM3.952 234.516a5.481 5.481 0 0 0-.229-.278c.082.071.159.163.228.278Zm89.99-206.304A4.213 4.213 0 0 0 89.727 24H56.864C38.714 24 24 38.708 24 56.852v618.296C24 693.292 38.714 708 56.864 708h250.272c18.15 0 32.864-14.708 32.864-32.852V56.852C340 38.708 325.286 24 307.136 24h-32.864a4.212 4.212 0 0 0-4.213 4.212v2.527c0 10.235-8.3 18.532-18.539 18.532H112.48c-10.239 0-18.539-8.297-18.539-18.532v-2.527Z"
-                                    ></path>
-                                    <rect x="154" y="29" width="56" height="5" rx="2.5" fill="#D4D4D4"></rect>
-                                </svg>
-                                <img
-                                    alt=""
-                                    src="~/assets/svg/phone-frame.svg"
-                                    width="366"
-                                    height="729"
-                                    decoding="async"
-                                    data-nimg="1"
-                                    class="pointer-events-none absolute inset-0 h-full w-full"
-                                    loading="lazy"
-                                    style="color: transparent;"
-                                />
                             </div>
-                            <div class="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
+                            <div class="relative inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                                 <h3 class="mt-6 text-sm font-semibold text-white sm:text-lg">
                                     {{ features[image - 1].title }}</h3>
                                 <p class="mt-2 text-sm text-gray-400">{{ features[image - 1].description }}</p>

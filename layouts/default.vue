@@ -8,11 +8,11 @@ useHead({
     <header>
         <nav>
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-50 flex justify-between py-8">
-                <div class="relative z-10 flex items-center gap-16"><a class="flex items-center" aria-label="Home"
-                                                                       href="/">
-                    <img aria-hidden="true" class="w-44 flex-none mr-4" src="~/assets/svg/logo-text.svg"/>
-                    <h1 style="display: none">FriendsQuest</h1>
-                </a>
+                <div class="relative z-10 flex items-center gap-16">
+                    <nuxt-link class="flex items-center" aria-label="Home" to="/">
+                        <img aria-hidden="true" class="w-44 flex-none mr-4" src="~/assets/svg/logo-text.svg"/>
+                        <h1 style="display: none">FriendsQuest</h1>
+                    </nuxt-link>
                 </div>
             </div>
         </nav>
