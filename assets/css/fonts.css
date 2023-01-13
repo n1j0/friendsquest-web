@@ -2,6 +2,6 @@
     font-family: 'TexGyreHeros';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/texgyreheros-regular.woff2') format('woff2');
+    src: url('~/assets/fonts/texgyreheros-regular.woff2') format('woff2');
     font-display: swap;
 }
