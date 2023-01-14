@@ -125,6 +125,9 @@ export default {
             <li>
                 <p>Pictures and other information from your Device's camera and photo library</p>
             </li>
+            <li>
+                <p>Audio from your Device´s microphone</p>
+            </li>
         </ul>
         <p>We use this information to provide features of Our Service, to improve and customize Our Service. The
             information may be uploaded to the Company's servers and/or a Service Provider's server or it may be
