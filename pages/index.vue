@@ -25,13 +25,15 @@ const features = ref([ {
                             When you are too far away to see whats behind the footprint just listen to the sounds behind
                             the memory.</p>
                         <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-                            <nuxt-link to="https://play.google.com/store/apps/details?id=at.friendsquest.app" target="_blank">
-                                <img width="120" src="~/assets/images/google-play-badge.png" />
+                            <nuxt-link to="https://play.google.com/store/apps/details?id=at.friendsquest.app"
+                                       target="_blank" class="-ml-3">
+                                <img width="200" src="~/assets/images/google-play-badge.png"/>
                             </nuxt-link>
-                            <nuxt-link to="/">
-                                <img width="150" src="~/assets/images/product-hunt-logo-horizontal-orange.png"
-                                     style="background: transparent;"/>
-                            </nuxt-link>
+                            <nuxt-link to="https://www.producthunt.com/posts/friendsquest?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-friendsquest"
+                               target="_blank"><img
+                                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=374983&theme=light"
+                                alt="FriendsQuest - Travel&#0044;&#0032;share&#0032;and&#0032;follow&#0032;special&#0032;footprints&#0032;on&#0032;a&#0032;3D&#0032;globe | Product Hunt"
+                                style="width: 250px; height: 54px;" width="250" height="54"/></nuxt-link>
                         </div>
                     </div>
                     <div class="relative mt-10 sm:mt-20 sm:px-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
